@@ -11,7 +11,7 @@ import json
 
 @login_required
 def form_page(request):
-        url = 'http://127.0.0.1:8000/predict'
+        url = 'http://fastapi_sba:8000/predict'
 
         headers = {
         'Accepts': 'application/json',

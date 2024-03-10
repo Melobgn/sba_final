@@ -24,7 +24,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
   fastapi_sba:
     ports:
-      - 8006:8000
+      - 8002:8000
     build:
       context: ./fastapi_sba/
       dockerfile: Dockerfile
