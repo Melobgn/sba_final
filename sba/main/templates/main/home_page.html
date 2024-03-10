@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="home" class="container parallax">
+    <div class="home-cover">
+      <div class="home-content">
+        <h1 class="wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
+        {% if user.is_authenticated %}
+          Hi {{user.get_username}}, <br>Welcome to<br> SBA Website</h1>
+        {% else %}
+          Welcome to<br> SBA Website</h1>
+        {% endif %}
+        <div class="content-title-underline2"></div>
+        <p>Through our website, entrepreneurs can conveniently evaluate their eligibility for various loan programs offered by the Small Business Administration.
+          Our goal is to empower entrepreneurs by offering a centralized hub where they can determine their eligibility for financial support and explore available loan options.
+          We provide a valuable resource for businesses seeking financial assistance, offering a straightforward assessment tool to determine loan eligibility and facilitate access to funding.
+        </p>
+        <img src="{% static "img/building.gif" %}" alt="gif">
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

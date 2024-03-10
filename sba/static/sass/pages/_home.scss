@@ -1,0 +1,55 @@
+#home{
+    width: 100%;
+    height: 100vh;
+    padding-top: 10%;
+    background-image: url('../img/citylarge.gif');
+   
+    
+    .home-cover{
+        width: 50%;
+        height: 88%;
+        background-color: rgba(0, 0, 0, 0.7);
+        float: left;
+
+        .home-content{
+            text-align: justify;
+            padding-top: 50px;
+            width: 70%;
+            color: white;
+            margin: auto;
+
+
+
+            img{
+                width: 40%;
+                margin-left: 60%;
+                margin-top: 50px;
+                border: 8px solid rgb(0, 0, 0);
+                border-radius: 15px;
+                border-style: outset;
+                box-shadow: 10px 10px 5px rgb(72, 189, 221);
+            }
+        }
+    }
+    
+}
+
+
+@media (max-width: 1410px) {
+    #home .home-cover{
+        width: 95%;
+
+
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    #home .home-cover .home-content{
+        img{
+            width: 100%;
+            margin-left: 0%;
+        }
+    }
+}

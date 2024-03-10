@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  web:
+    depends_on:
+      - postgres_db
+      - fastapi_sba
+    ports:
+      - 8001:8000
+    env_file:
+      - sba/.env
+    build:
+      context: ./sba/
+      dockerfile: Dockerfile
+    volumes:
+      - ./sba/:/app/
+  postgres_db:
+    image: postgres
+    restart: always 
+    env_file:
+      - sba/.env
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  fastapi_sba:
+    ports:
+      - 8006:8000
+    build:
+      context: ./fastapi_sba/
+      dockerfile: Dockerfile
+
+volumes:
+  postgres_data:

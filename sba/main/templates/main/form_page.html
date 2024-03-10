@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static widget_tweaks %}
+
+{% block content %}
+
+<div id="formulaire_page" class="parallax">
+    <div id="formulaire_content">
+        <div id="formulaire_info">
+            <h1>Submission Form</h1>
+            <div class="content-title-underline2"></div>
+            <p>As you engage with our platform, we encourage you to provide us with comprehensive information about your business. This will enable us to tailor our services to your unique needs and circumstances. By completing the form with details such as your business's state, its eligibility for revolving lines of credit or low-doc credit, whether it's a new or existing business, and whether it operates in an urban or rural area, you help us gain a deeper understanding of your business environment.
+
+                Additionally, providing information such as franchise code and NAICS code allows us to better categorize and assess your business's industry and structure. Details about the term of the loan, the desired loan amount, and the number of employees aid us in determining the most suitable financing options for your business's growth and development.
+                
+                Moreover, insights into the number of jobs created and retained further enhance our ability to gauge the impact of your business on the local economy. Understanding your business's loan history and the amount approved, especially by the SBA, helps us tailor our financial solutions to meet your specific requirements.</p>
+            <p>By furnishing us with this comprehensive information, you empower us to offer personalized support and guidance, ensuring that your entrepreneurial journey is met with the utmost attention and assistance. We are committed to providing you with the tools, resources, and expertise needed to thrive in today's competitive business landscape.</p>
+        </div>
+        <img src="{% static "img/size.jpg" %}" alt="gif">
+    </div>
+    <form action="." method="post" id="formulaire">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+        <div id="predict_content">
+            {% if data %}
+                {% if data.prediction == 0 %}
+                    <p>We can grant you a loan</p>
+                {% else %}
+                    <p>We cannot grant you a loan</p>
+                {% endif %} 
+            {% elif error %}
+                <p>Invalide</p>
+            {% endif %} 
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+

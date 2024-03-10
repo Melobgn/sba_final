@@ -1,0 +1,5 @@
+scikit-learn<2
+fastapi<1
+uvicorn<1
+pandas==2.2.0
+catboost==1.2.3
