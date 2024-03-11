@@ -24,9 +24,9 @@
         <div id="predict_content">
             {% if data %}
                 {% if data.prediction == 0 %}
-                    <p>We can grant you a loan</p>
+                    <p>Exciting news! Your loan application has been received and is currently being processed. Based on our initial review, we're delighted to inform you that <b> your loan can be granted pending final verification </b>. To proceed, please check your email for further instructions on finalizing your application. Thank you for choosing us as your financial partner!</p>
                 {% else %}
-                    <p>We cannot grant you a loan</p>
+                    <p>We regret to inform you that your <b> loan application did not meet our current approval criteria </b>. However, we appreciate the opportunity to review your request. If you have any questions or would like to discuss alternative options, please don't hesitate to contact us. Thank you for considering us for your financial needs.</p>
                 {% endif %} 
             {% elif error %}
                 <p>Invalide</p>
