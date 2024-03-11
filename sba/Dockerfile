@@ -16,4 +16,6 @@ COPY . /app
 
 EXPOSE 8001
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8001"]
+RUN chmod +x /app/entrypoint.sh
+
+ENTRYPOINT ["sh","/app/entrypoint.sh"]
