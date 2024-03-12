@@ -72,6 +72,10 @@ h1 {
   background-color: #000000;
 }
 
+.bg {
+  background-color: rgb(88, 155, 243);
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -132,6 +136,10 @@ a img {
   margin-left: 20px;
 }
 
+.logg {
+  color: rgb(236, 236, 236);
+}
+
 .menu-items li a {
   text-decoration: none;
   color: rgb(236, 236, 236);
@@ -184,7 +192,7 @@ li {
   }
 }
 #footertop {
-  height: 40vh;
+  height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

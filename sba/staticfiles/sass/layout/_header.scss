@@ -6,7 +6,9 @@
       }
   }
 
-  
+  .bg{
+    background-color: rgb(88, 155, 243);
+  }
 
   nav {
       position: fixed;
@@ -71,10 +73,11 @@
     
     .menu-items li {
       margin-left: 20px;
-      
-      
+
     }
-    
+    .logg{
+        color: rgb(236, 236, 236);
+      }
     .menu-items li a {
       text-decoration: none;
       color: rgb(236, 236, 236);
