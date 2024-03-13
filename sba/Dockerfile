@@ -2,7 +2,9 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt /app
+RUN apt-get update && apt-get install -y netcat-openbsd
+
+COPY requirements.txt .
 
 RUN python -m venv /opt/venv
 ENV PATH="opt/venv/bin:$PATH"

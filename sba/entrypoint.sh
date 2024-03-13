@@ -1,11 +1,23 @@
 #!/bin/sh
 
-echo "Effectuer les migrations de la base de données..."
-python manage.py makemigrations && python manage.py migrate
-python manage.py collectstatic --noinput
+while ! nc -z $POSTGRES_HOST $POSTGRES_PORT; do
+  echo "En attente de la disponibilité de Postgres..."
+  sleep 1
+done
 
+# Effectuer les migrations
+echo "Effectuer les migrations de la base de données..."
+
+python manage.py makemigrations && python manage.py migrate
+
+python manage.py collectstatic --no-input
 
 echo "Lancer le serveur"
 
-gunicorn sba.wsgi:application --workers=2 --timeout 120 --bind=0.0.0.0:8001
-# python manage.py runserver 0.0.0.0:8000
+### production ###
+### Version avec gunicorn pour le serveur web
+gunicorn sba.wsgi:application --workers=4 --bind=0.0.0.0:8001 --reload
+
+
+## dev en local ###
+# python manage.py runserver 0.0.0.0:80
